@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title> Gráfico de Linhas </title>
+        <!-- 1. Add these JavaScript inclusions in the head of your page -->
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script src="http://code.highcharts.com/highcharts.js"></script>    
+    </head>
+    <body>
+        <script>
+            $(function () { 
+                $('#container').highcharts({
+                    chart: {
+                        type: 'line'
+                    },
+                    title: {
+                        text: 'Arrecadação nas Bilheterias na Semana de Estreia'
+                    },
+                    xAxis: {
+                        categories: ['Sexta', 'Sábado', 'Domingo', 'Segunda', 'Terça',
+                                     'Quarta', 'Quinta']
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Valor arrecadado (US$) corrigido pela inflação'
+                        }
+                    },
+                    series: [{
+                        name: 'Harry Potter and the Deathly Hallows Part 2',
+                        data: [99788300, 46474200, 39121500, 19770100, 16861100,
+                               13441400, 12304000]
+                        },{
+                        name: 'Harry Potter and the Deathly Hallows Part 1',
+                        data: [66998200, 41519200, 27269300, 9542300, 11148500,
+                               15668500, 12464500]  
+                        }]
+                });
+            });
+        </script>
+        <div id="container" style="width:100%; height:400px;"></div>
+    </body>
+</html>
